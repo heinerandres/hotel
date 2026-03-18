@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Lumina Boutique Hotel | Tu Escape Perfecto</title>
+  <!-- Google Fonts: Serif for headings, Sans for body -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              beige: '#F5F5F0',
+              gold: '#C5A059',
+              charcoal: '#1A1A1A',
+              sand: '#E8E2D6',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F5F0;
+      color: #1A1A1A;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+  <style data-purpose="custom-animations">
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    }
+
+    .booking-bar {
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hover-gold:hover {
+      color: #C5A059;
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- BEGIN: Navigation -->
+  <nav
+    class="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 text-white border-b border-white/10"
+    data-purpose="main-navigation">
+    <div class="text-2xl font-serif tracking-widest uppercase">Lumina</div>
+    <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+      <li><a class="hover-gold" href="#">Inicio</a></li>
+      <li><a class="hover-gold" href="#rooms">Habitaciones</a></li>
+      <li><a class="hover-gold" href="#amenities">Servicios</a></li>
+      <li><a class="hover-gold" href="#contact">Contacto</a></li>
+    </ul>
+    <div>
+      <a class="border border-white px-6 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-brand-charcoal transition-all"
+        href="#booking">Reservar</a>
+    </div>
+  </nav>
+  <!-- END: Navigation -->
+  <!-- BEGIN: Hero Section -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+    data-purpose="hero-section">
+    <!-- Hero Image -->
+    <img alt="Boutique Hotel Luxury Pool" class="absolute inset-0 w-full h-full object-cover" src="https://cdn.prod.website-files.com/64d618bb0ccc37b64e1d6053/67f0e8aab53da794251b9ec4_6718b6820112355ec0cc585c_Property%20-%20Colombo%201.jpg" />
+    <div class="absolute inset-0 hero-overlay"></div>
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center text-white px-4">
+      <h1 class="text-5xl md:text-7xl mb-12 opacity-95">Tu escape perfecto te espera</h1>
+      <!-- Booking Bar -->
+      <div
+        class="booking-bar bg-white p-2 md:p-4 rounded-sm flex flex-col md:flex-row items-stretch md:items-center gap-2 max-w-5xl mx-auto"
+        data-purpose="booking-selection-bar" id="booking">
+        <div class="flex-1 px-4 py-2 border-r border-gray-100 text-left">
+          <label class="block text-[10px] uppercase text-gray-400 font-bold mb-1">Llegada</label>
+          <input class="w-full border-none p-0 text-brand-charcoal focus:ring-0 text-sm" type="date"
+            value="2023-11-20" />
+        </div>
+        <div class="flex-1 px-4 py-2 border-r border-gray-100 text-left">
+          <label class="block text-[10px] uppercase text-gray-400 font-bold mb-1">Salida</label>
+          <input class="w-full border-none p-0 text-brand-charcoal focus:ring-0 text-sm" type="date"
+            value="2023-11-25" />
+        </div>
+        <div class="flex-1 px-4 py-2 border-r border-gray-100 text-left">
+          <label class="block text-[10px] uppercase text-gray-400 font-bold mb-1">Huéspedes</label>
+          <select class="w-full border-none p-0 text-brand-charcoal focus:ring-0 text-sm bg-transparent">
+            <option>2 Adultos, 0 Niños</option>
+            <option>1 Adulto</option>
+            <option>2 Adultos, 1 Niños</option>
+          </select>
+        </div>
+        <button
+          class="bg-brand-charcoal text-white px-10 py-4 uppercase text-xs tracking-widest hover:bg-brand-gold transition-colors">
+          Consultar
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- END: Hero Section -->
+  <!-- BEGIN: Rooms Section -->
+  <section class="py-24 px-8 max-w-7xl mx-auto" data-purpose="rooms-grid" id="rooms">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl mb-4 text-brand-charcoal">Estancias de Ensueño</h2>
+      <div class="h-1 w-20 bg-brand-gold mx-auto"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Suite Card -->
+      <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500"
+        data-purpose="room-card">
+        <div class="overflow-hidden h-80">
+          <img alt="Presidential Suite"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="https://cdn.prod.website-files.com/64d618bb0ccc37b64e1d6053/67f0e8aab53da794251b9ec4_6718b6820112355ec0cc585c_Property%20-%20Colombo%201.jpg" />
+        </div>
+        <div class="p-8 text-center">
+          <h3 class="text-2xl mb-2">Presidential Suite</h3>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Vistas panorámicas al océano con terraza privada y
+            jacuzzi.</p>
+          <div class="flex flex-col items-center">
+            <span class="text-brand-gold font-serif text-lg mb-4">Desde $450 / noche</span>
+            <button
+              class="w-full py-3 border border-brand-charcoal text-xs uppercase tracking-widest hover:bg-brand-charcoal hover:text-white transition-colors">Reservar
+              Ahora</button>
+          </div>
+        </div>
+      </article>
+      <!-- Deluxe Card -->
+      <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500"
+        data-purpose="room-card">
+        <div class="overflow-hidden h-80">
+          <img alt="Deluxe Room"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAlert2fLZ2t9yDtTuZi521L34wkbPx5esF9xVvJI3UnV6ZqhS9m4XNViFwNJ0WNYFrEpfodOnLj-aWKHumn7AUn3oVnxdRyZ6wDF_-nLQfYClIn_hy1uS-7KCS7UWrdGZEHY3YfedwNSgiz2JyOErmiFy92JRLTayIqTkIZUm7mGxEkBm9fplCy1PGQUmlELzzY7NYO_igm55uapkGKt_sdZ4UFiq-KaHi2MW_z0TewYIQYX5MZZBM1hKB3sq3aEDXTFW946l_h9U" />
+        </div>
+        <div class="p-8 text-center">
+          <h3 class="text-2xl mb-2">Deluxe Room</h3>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Elegancia contemporánea con detalles en mármol y seda.
+          </p>
+          <div class="flex flex-col items-center">
+            <span class="text-brand-gold font-serif text-lg mb-4">Desde $320 / noche</span>
+            <button
+              class="w-full py-3 border border-brand-charcoal text-xs uppercase tracking-widest hover:bg-brand-charcoal hover:text-white transition-colors">Reservar
+              Ahora</button>
+          </div>
+        </div>
+      </article>
+      <!-- Standard Card -->
+      <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500"
+        data-purpose="room-card">
+        <div class="overflow-hidden h-80">
+          <img alt="Standard Luxury Room"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="https://www.palladiumhotelgroup.com/adobe/dynamicmedia/deliver/dm-aid--51157d6a-6716-47d3-ae2f-59b412a9f4d5/PALLADIUM_EBB_EUROPA_SLIDER_2500x1100.webp" />
+        </div>
+        <div class="p-8 text-center">
+          <h3 class="text-2xl mb-2">Standard Luxury</h3>
+          <p class="text-gray-500 text-sm mb-6 leading-relaxed">Confort excepcional diseñado para el descanso absoluto.
+          </p>
+          <div class="flex flex-col items-center">
+            <span class="text-brand-gold font-serif text-lg mb-4">Desde $210 / noche</span>
+            <button
+              class="w-full py-3 border border-brand-charcoal text-xs uppercase tracking-widest hover:bg-brand-charcoal hover:text-white transition-colors">Reservar
+              Ahora</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- END: Rooms Section -->
+  <!-- BEGIN: Amenities Section -->
+  <section class="bg-brand-charcoal py-24 text-white" data-purpose="amenities-section" id="amenities">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2">
+          <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Experiencias curadas para el alma</h2>
+          <p class="text-gray-400 mb-12 leading-relaxed max-w-lg">
+            En Lumina, cada detalle está diseñado para elevar sus sentidos. Desde el amanecer en nuestra playa privada
+            hasta una cena bajo las estrellas.
+          </p>
+          <div class="grid grid-cols-2 gap-y-12 gap-x-8">
+            <div class="flex items-start gap-4">
+              <div class="text-brand-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Serenity Spa</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Tratamientos Holísticos</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="text-brand-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Beach Club</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Acceso Privado</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="text-brand-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Gourmet</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Cocina de Autor</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="text-brand-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-serif text-xl mb-1">Rooftop Bar</h4>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Mixología Premium</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 h-[600px]">
+          <img alt="Spa Treatment" class="w-full h-full object-cover"
+            src="https://clinicabanos.com/wp-content/uploads/2019/02/masaje-relajante-con-aromaterapia-clinicabanos-jpeg.webp" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Amenities Section -->
+  <!-- BEGIN: Testimonials Section -->
+  <section class="py-24 bg-brand-sand/30" data-purpose="testimonials">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <p class="text-xs uppercase tracking-[0.3em] text-brand-gold mb-4">Lo que dicen de nosotros</p>
+        <h2 class="text-4xl md:text-5xl font-serif">Historias Inolvidables</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="bg-white p-12 shadow-sm border-t-4 border-brand-gold">
+          <p class="text-brand-charcoal italic mb-8 leading-relaxed font-serif text-xl">
+            "La atención al detalle en Lumina es simplemente inigualable. Sentí que el tiempo se detuvo desde el momento
+            en que entré al lobby."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-brand-beige rounded-full"></div>
+            <div>
+              <p class="font-bold text-sm tracking-widest uppercase">Elena Rodriguez</p>
+              <p class="text-xs text-gray-400">Viajera Frecuente</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-12 shadow-sm border-t-4 border-brand-gold">
+          <p class="text-brand-charcoal italic mb-8 leading-relaxed font-serif text-xl">
+            "El restaurante gourmet superó todas mis expectativas. Una joya escondida que definitivamente volveré a
+            visitar muy pronto."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-brand-beige rounded-full"></div>
+            <div>
+              <p class="font-bold text-sm tracking-widest uppercase">Marc Stevens</p>
+              <p class="text-xs text-gray-400">Crítico Gastronómico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Testimonials Section -->
+  <!-- BEGIN: Footer -->
+  <footer class="bg-brand-charcoal text-white pt-20 pb-10" data-purpose="main-footer" id="contact">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-1">
+          <div class="text-3xl font-serif tracking-widest uppercase mb-6">Lumina</div>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">
+            Elegancia y tranquilidad redefinidas en el corazón del paraíso.
+          </p>
+          <div class="flex gap-4">
+            <!-- Social Placeholder Icons -->
+            <a class="text-brand-gold hover:text-white transition-colors" href="#">IG</a>
+            <a class="text-brand-gold hover:text-white transition-colors" href="#">FB</a>
+            <a class="text-brand-gold hover:text-white transition-colors" href="#">TW</a>
+          </div>
+        </div>
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-brand-gold">Ubicación</h4>
+          <p class="text-gray-400 text-sm mb-2">Av. de la Costa 102</p>
+          <p class="text-gray-400 text-sm mb-2">Riviera Maya, Quintana Roo</p>
+          <p class="text-gray-400 text-sm">México</p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-brand-gold">Contacto</h4>
+          <p class="text-gray-400 text-sm mb-2">info@lumina-hotel.com</p>
+          <p class="text-gray-400 text-sm">+52 984 123 4567</p>
+        </div>
+        <!-- Small Map Placeholder -->
+        <div class="h-48 w-full bg-gray-800 rounded overflow-hidden">
+          <div class="w-full h-full flex items-center justify-center text-gray-600 text-xs italic">
+            <!-- Representing a map visualization -->
+            <div class="text-center p-4">
+              <svg class="w-8 h-8 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1"></path>
+              </svg>
+              Mapa Interactivo
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="border-t border-white/5 pt-10 text-center">
+        <p class="text-[10px] uppercase tracking-widest text-gray-600">
+          © 2023 Lumina Boutique Hotel. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+</body>
+
+</html>
